@@ -1,100 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Magia da Câmara Escura de Orifício (Pinhole)</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desvendando a Câmara Escura</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>A Fascinante Câmara Escura</h1>
+        <p>Um mergulho na física da luz e da fotografia.</p>
+    </header>
 
-  <header class="hero">
-    <h1>Câmara Escura de Orifício</h1>
-    <p>A física da luz e a imagem invertida em sua forma mais simples.</p>
-  </header>
+    <main>
+        <section id="introducao">
+            <h2>O que é a Câmara Escura?</h2>
+            <p>Imagine um quarto completamente escuro, com apenas um pequeno furo na parede. A luz que entra por esse furo projeta na parede oposta uma imagem invertida e colorida do que está lá fora. Essa é a magia da câmara escura, o princípio fundamental da fotografia!</p>
+        </section>
 
-  <main class="container">
-    
-    <section class="card intro">
-      <h2>O que é e Como Funciona?</h2>
-      <p>
-        A **câmara escura de orifício**, também conhecida como <em>câmera pinhole</em>, é o dispositivo óptico mais simples que existe. Ela demonstra a **propagação retilínea da luz**: a luz viaja em linha reta.
-      </p>
-      <div class="theory-grid">
-        <div class="theory-text">
-          <p>Imagine uma caixa totalmente selada, exceto por um furo minúsculo em uma das faces.</p>
-          <ul>
-            <li>A luz do ambiente externo reflete nos objetos.</li>
-            <li>Apenas uma quantidade muito pequena de luz passa pelo furo.</li>
-            <li>Esses raios de luz atingem a parede oposta (o anteparo), formando uma imagem **invertida** e **menor** do objeto externo.</li>
-          </ul>
-        </div>
-        <div class="img-container">
-          <div id="diagram" class="interactive-diagram">
-            <div class="diagram-light light-top"></div>
-            <div class="diagram-light light-bottom"></div>
-            <div class="diagram-box">
-              <div class="pinhole"></div>
+        <section id="teoria">
+            <h2>Como a Magia Acontece (A Teoria)</h2>
+            <div class="explain-item">
+                <img src="caminho_para_sua_imagem_teorica.jpg" alt="Diagrama de como a luz viaja em linha reta através do orifício.">
+                <p>A luz se propaga em linha reta. Quando a luz de um objeto externo passa pelo pequeno orifício, os raios de luz das partes superior e inferior se cruzam. Isso resulta na projeção de uma imagem invertida no fundo da câmara.</p>
             </div>
-            <div class="diagram-f-object">F</div>
-            <div class="diagram-f-image">F</div>
-          </div>
-          <span class="caption">A luz viaja em linha reta e cruza no orifício.</span>
-        </div>
-      </div>
-    </section>
+            <p>O tamanho da imagem projetada depende da distância entre o orifício e o fundo da câmara, bem como da distância do objeto. Um orifício menor cria uma imagem mais nítida, mas mais escura.</p>
+        </section>
 
-    <section class="card simulation">
-      <h2>Simulador Pinhole Interativo</h2>
-      <p>Ajuste o tamanho do orifício e veja o que acontece com a imagem projetada no anteparo!</p>
-      
-      <div class="simulation-area">
-        <div id="simImage" class="sim-content">
-          <span>H</span> </div>
-        
-        <div class="projection-wall">
-          <div class="pinhole-visualization"></div>
-          <p>Anteparo (Caixa Interna)</p>
-        </div>
-      </div>
+        <section id="pratica">
+            <h2>A Câmara Escura na Prática</h2>
+            <div class="explain-item">
+                <img src="caminho_para_sua_imagem_pratica.jpg" alt="Uma câmara escura real mostrando a imagem projetada.">
+                <p>Você pode criar sua própria câmara escura com uma caixa de papelão, papel vegetal e papel alumínio! Veja abaixo como cada parte funciona. </p>
+            </div>
+        </section>
+    </main>
 
-      <div class="controls-group">
-        <div class="control">
-          <label for="holeSize">Tamanho do Orifício: <span id="holeSizeVal">Pequeno</span></label>
-          <input type="range" id="holeSize" min="1" max="10" value="1">
-        </div>
-        <div class="control">
-          <label for="distanceVal">Distância do Objeto: <span id="distVal">Longe</span></label>
-          <input type="range" id="distanceVal" min="5" max="25" value="20">
-        </div>
-      </div>
-
-      <p id="simEffectDesc" class="effect-description">
-        Quando o orifício é **pequeno**, a imagem é **nítida**, mas **escura**.
-      </p>
-    </section>
-
-    <section class="card math">
-      <h2>O Dilema do Pinhole</h2>
-      <p>Embora simples, a câmara de orifício exige um equilíbrio.</p>
-      <div class="challenge-box">
-        <div class="challenge shadow">
-          <h3>Furo Muito Pequeno</h3>
-          <p>Alta nitidez (foco), mas a imagem é extremamente **escura**. A luz é muito fraca.</p>
-        </div>
-        <div class="challenge fuzz">
-          <h3>Furo Muito Grande</h3>
-          <p>A imagem fica mais brilhante, mas muito **borrada** (fora de foco), pois muitos raios de luz de diferentes pontos atingem o mesmo ponto no anteparo.</p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>Explorando a Óptica Geométrica &copy; 2026 - Projeto Educativo</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2023 - Entendendo a Luz</p>
+    </footer>
 </body>
 </html>
