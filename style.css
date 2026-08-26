@@ -1,306 +1,156 @@
-/* Configurações Globais - Design Moderno e Colorido */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif; /* Uma fonte mais moderna */
-}
-
-/* Paleta de Cores Vibrante */
 :root {
-  --bg-color: #0d1117;
-  --primary: #a78bfa; /* Lilás */
-  --secondary: #38bdf8; /* Azul claro */
-  --accent: #f43f5e; /* Rosa avermelhado */
-  --highlight: #a7f3d0; /* Verde menta */
-  --card-bg: #161b22;
-  --text-main: #e6edf3;
-  --text-mute: #8b949e;
+    --bg-color: #121214;
+    --card-bg: #202024;
+    --accent-color: #ff9d00;
+    --text-color: #e1e1e6;
+    --text-dim: #a8a8b3;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
-/* Header / Hero - Colorido e Impactante */
-.hero {
-  text-align: center;
-  padding: 4rem 1rem;
-  background: linear-gradient(135deg, #1e293b 0%, var(--card-bg) 50%, #0d1117 100%);
-  border-bottom: 4px solid var(--primary);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+header {
+    background-color: #18181b;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-bottom: 2px solid #29292e;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-  text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+header h1 {
+    color: var(--accent-color);
+    margin: 0;
 }
 
-.hero p {
-  color: var(--secondary);
-  font-size: 1.2rem;
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-/* Layout */
-.container {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+hr {
+    border: none;
+    border-top: 1px solid #29292e;
+    margin: 3rem 0;
+}
+
+/* Container do Simulador */
+.simulation-container {
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    border: 1px solid #323238;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Controles */
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.control-group label {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+input[type="range"] {
+    accent-color: var(--accent-color);
+    cursor: pointer;
+}
+
+/* Painel de Cálculo */
+.math-box {
+    background: #29292e;
+    border-left: 4px solid var(--accent-color);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+}
+
+.math-box strong {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+/* Seção Explicativa (Cards) */
+.explain-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .card {
-  background-color: var(--card-bg);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #29292e;
 }
 
-.card h2 {
-  color: var(--secondary);
-  margin-bottom: 1rem;
-  font-weight: 600;
+.card.reverse {
+    flex-direction: row-reverse;
 }
 
-.card p, .card ul {
-  margin-bottom: 1rem;
+.card img {
+    width: 40%;
+    border-radius: 6px;
+    object-fit: contain;
+    background: #fff;
+    padding: 0.5rem;
 }
 
-.card ul {
-  padding-left: 1.5rem;
+.card-text {
+    flex: 1;
 }
 
-/* Grade de Teoria */
-.theory-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  align-items: center;
+.card-text h3 {
+    color: var(--accent-color);
+    margin-top: 0;
 }
 
-@media (max-width: 768px) {
-  .theory-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Imagens e Diagrama Animado */
-.img-container {
-  text-align: center;
-  position: relative;
-}
-
-.interactive-diagram {
-  width: 100%;
-  height: 200px;
-  background-color: #050505;
-  border-radius: 8px;
-  border: 1px solid var(--text-mute);
-  overflow: hidden;
-  position: relative;
-}
-
-.diagram-box {
-  width: 80px;
-  height: 120px;
-  background-color: #333;
-  border: 2px solid #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.pinhole {
-  width: 4px;
-  height: 4px;
-  background-color: transparent;
-  border: 2px solid yellow;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: -3px;
-  transform: translateY(-50%);
-}
-
-.diagram-f-object, .diagram-f-image {
-  font-size: 4rem;
-  font-weight: bold;
-  color: var(--primary);
-  position: absolute;
-}
-
-.diagram-f-object {
-  left: 10%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.diagram-f-image {
-  right: 15%;
-  top: 50%;
-  color: var(--highlight);
-  transform: translateY(-50%) rotate(180deg) scaleX(-1); /* Invertida */
-  filter: blur(1px);
-}
-
-/* Seção Interativa */
-.simulation-area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  background-color: #000;
-  padding: 1rem;
-  border-radius: 12px;
-  height: 300px;
-  overflow: hidden;
-  border: 2px dashed rgba(255,255,255,0.2);
-}
-
-.sim-content {
-  color: var(--primary);
-  font-size: 10rem;
-  font-weight: bold;
-  transform: rotate(0deg); /* Objeto real */
-}
-
-.projection-wall {
-  text-align: center;
-  width: 150px;
-  height: 250px;
-  border: 3px solid var(--secondary);
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255,255,255,0.05);
-  color: var(--highlight);
-  position: relative;
-}
-
-/* Imagem Invertida Animada */
-.pinhole-visualization {
-  font-size: 8rem;
-  font-weight: bold;
-  transform: rotate(180deg) scaleX(-1);
-  transition: all 0.2s ease;
-  filter: blur(1px);
-  color: var(--highlight);
-  opacity: 0.2; /* Inicialmente escura */
-}
-
-.pinhole-visualization::before {
-  content: "H"; /* Mesma letra do objeto */
-}
-
-/* Controles Coloridos */
-.controls-group {
-  margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  padding: 1rem;
-  background-color: rgba(255,255,255,0.05);
-  border-radius: 8px;
-}
-
-.control {
-  display: flex;
-  flex-direction: column;
-}
-
-.control label {
-  color: var(--text-mute);
-  margin-bottom: 0.5rem;
-}
-
-.control span {
-  color: var(--highlight);
-  font-weight: bold;
-}
-
-/* Estilo do Slider (Input Range) Colorido */
-input[type=range] {
-  -webkit-appearance: none;
-  width: 100%;
-  background: transparent;
-}
-
-input[type=range]:focus {
-  outline: none;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 8px;
-  cursor: pointer;
-  background: rgba(255,255,255,0.1);
-  border-radius: 4px;
-}
-
-input[type=range]::-webkit-slider-thumb {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background: var(--primary);
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -6px; /* Ajuste do thumb */
-  box-shadow: 0 0 10px rgba(167, 139, 250, 0.8);
-}
-
-/* Efeito Dinâmico de Texto */
-.effect-description {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 4px;
-  border-left: 4px solid var(--primary);
-  color: var(--text-mute);
-}
-
-/* Seção Math e Desafios */
-.challenge-box {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.challenge {
-  flex: 1;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 2px solid;
-}
-
-.shadow {
-  border-color: rgba(255,255,255,0.1);
-  background-color: rgba(0,0,0,0.5);
-  filter: contrast(0.5); /* Imagem escura */
-}
-
-.fuzz {
-  border-color: var(--accent);
-  background-color: rgba(244, 63, 94, 0.1);
-  box-shadow: 0 0 15px rgba(244, 63, 94, 0.3);
-  color: var(--text-mute);
-  filter: blur(2px); /* Efeito borrado */
-}
-
-.challenge h3 {
-  color: var(--highlight);
-  margin-bottom: 0.5rem;
-}
-
-/* Footer */
 footer {
-  text-align: center;
-  padding: 2rem;
-  color: rgba(255,255,255,0.1);
-  font-size: 0.9rem;
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-dim);
+    border-top: 1px solid #29292e;
+    margin-top: 2rem;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 650px) {
+    .controls {
+        grid-template-columns: 1fr;
+    }
+    .card, .card.reverse {
+        flex-direction: column;
+    }
+    .card img {
+        width: 100%;
+    }
 }
