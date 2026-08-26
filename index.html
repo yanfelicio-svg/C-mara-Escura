@@ -3,41 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desvendando a Câmara Escura</title>
+    <title>Simulador Interativo: Câmara Escura</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>A Fascinante Câmara Escura</h1>
-        <p>Um mergulho na física da luz e da fotografia.</p>
+        <p>Entenda a óptica geométrica e a propagação retilínea da luz na prática.</p>
     </header>
 
     <main>
-        <section id="introducao">
-            <h2>O que é a Câmara Escura?</h2>
-            <p>Imagine um quarto completamente escuro, com apenas um pequeno furo na parede. A luz que entra por esse furo projeta na parede oposta uma imagem invertida e colorida do que está lá fora. Essa é a magia da câmara escura, o princípio fundamental da fotografia!</p>
-        </section>
-
-        <section id="teoria">
-            <h2>Como a Magia Acontece (A Teoria)</h2>
-            <div class="explain-item">
-                <img src="caminho_para_sua_imagem_teorica.jpg" alt="Diagrama de como a luz viaja em linha reta através do orifício.">
-                <p>A luz se propaga em linha reta. Quando a luz de um objeto externo passa pelo pequeno orifício, os raios de luz das partes superior e inferior se cruzam. Isso resulta na projeção de uma imagem invertida no fundo da câmara.</p>
+        <section class="interactive-section">
+            <h2>Laboratório Virtual Interativo</h2>
+            <p>Arraste os controles para ver como a distância e o tamanho do objeto alteram a imagem projetada!</p>
+            
+            <div class="simulation-container">
+                <canvas id="cameraCanvas" width="700" height="350"></canvas>
             </div>
-            <p>O tamanho da imagem projetada depende da distância entre o orifício e o fundo da câmara, bem como da distância do objeto. Um orifício menor cria uma imagem mais nítida, mas mais escura.</p>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label for="distance">Distância do Objeto ($p$): <span id="distValue">250</span> px</label>
+                    <input type="range" id="distance" min="150" max="400" value="250">
+                </div>
+
+                <div class="control-group">
+                    <label for="height">Altura do Objeto ($o$): <span id="heightValue">80</span> px</label>
+                    <input type="range" id="height" min="40" max="120" value="80">
+                </div>
+            </div>
+
+            <div class="math-box">
+                <h3>Cálculo em Tempo Real:</h3>
+                <p>$$\frac{i}{o} = \frac{p'}{p} \implies i = o \cdot \frac{p'}{p}$$</p>
+                <p>Tamanho da Imagem Projetada ($i$): <strong id="calcResult">0</strong> px (Invertida)</p>
+            </div>
         </section>
 
-        <section id="pratica">
-            <h2>A Câmara Escura na Prática</h2>
-            <div class="explain-item">
-                <img src="caminho_para_sua_imagem_pratica.jpg" alt="Uma câmara escura real mostrando a imagem projetada.">
-                <p>Você pode criar sua própria câmara escura com uma caixa de papelão, papel vegetal e papel alumínio! Veja abaixo como cada parte funciona. </p>
+        <hr>
+
+        <section class="explain-section">
+            <h2>Como Funciona a Física por Trás?</h2>
+            
+            <div class="card">
+                <img src="image_840c9e.png" alt="Esquema geométrico da câmara escura mostrando semelhança de triângulos">
+                <div class="card-text">
+                    <h3>1. Geometria dos Raios de Luz</h3>
+                    <p>Como a luz se propaga estritamente em **linha reta**, os raios vindos do topo do objeto ($A$) só conseguem passar pelo orifício e atingir a base inferior do fundo da câmara ($A'$). Da mesma forma, a base ($B$) é projetada no topo ($B'$).</p>
+                </div>
+            </div>
+
+            <div class="card reverse">
+                <img src="image_840cbe.png" alt="Desenho histórico de câmara escura com uma vela projetando imagem invertida">
+                <div class="card-text">
+                    <h3>2. Projeção Invertida</h3>
+                    <p>O resultado físico é uma imagem **real, menor (geralmente) e invertida**. Esse é o mesmo princípio de funcionamento do olho humano (antes do cérebro desinverter a imagem) e das câmeras fotográficas modernas.</p>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 - Entendendo a Luz</p>
+        <p>Projeto Educacional de Óptica Geométrica</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
