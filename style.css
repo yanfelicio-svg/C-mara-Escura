@@ -1,176 +1,306 @@
-/* Configurações Globais */
+/* Configurações Globais - Design Moderno e Colorido */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif; /* Uma fonte mais moderna */
+}
+
+/* Paleta de Cores Vibrante */
+:root {
+  --bg-color: #0d1117;
+  --primary: #a78bfa; /* Lilás */
+  --secondary: #38bdf8; /* Azul claro */
+  --accent: #f43f5e; /* Rosa avermelhado */
+  --highlight: #a7f3d0; /* Verde menta */
+  --card-bg: #161b22;
+  --text-main: #e6edf3;
+  --text-mute: #8b949e;
 }
 
 body {
-  background-color: #0f172a;
-  color: #f8fafc;
+  background-color: var(--bg-color);
+  color: var(--text-main);
   line-height: 1.6;
 }
 
-/* Header / Hero */
+/* Header / Hero - Colorido e Impactante */
 .hero {
   text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(135deg, #1e293b, #0f172a);
-  border-bottom: 2px solid #38bdf8;
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #1e293b 0%, var(--card-bg) 50%, #0d1117 100%);
+  border-bottom: 4px solid var(--primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  color: #38bdf8;
+  font-size: 3rem;
+  color: var(--primary);
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
 }
 
 .hero p {
-  color: #94a3b8;
-  font-size: 1.1rem;
+  color: var(--secondary);
+  font-size: 1.2rem;
 }
 
 /* Layout */
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
 .card {
-  background-color: #1e293b;
-  border-radius: 12px;
+  background-color: var(--card-bg);
+  border-radius: 16px;
   padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .card h2 {
-  color: #38bdf8;
+  color: var(--secondary);
   margin-bottom: 1rem;
-  border-bottom: 1px solid #334155;
-  padding-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .card p, .card ul {
   margin-bottom: 1rem;
-  color: #e2e8f0;
 }
 
 .card ul {
   padding-left: 1.5rem;
 }
 
-.card li {
-  margin-bottom: 0.5rem;
-}
-
-/* Caixa de Equação */
-.equation-box {
-  background-color: #0f172a;
-  padding: 1rem;
-  border-left: 4px solid #38bdf8;
-  border-radius: 4px;
-  margin: 1rem 0;
-}
-
-.equation-box code {
-  font-size: 1.2rem;
-  color: #f43f5e;
-}
-
-/* Imagens */
-.img-container {
-  margin-top: 1.5rem;
-  text-align: center;
-}
-
-.img-container img {
-  width: 100%;
-  max-height: 350px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid #334155;
-}
-
-.caption {
-  display: block;
-  font-size: 0.85rem;
-  color: #94a3b8;
-  margin-top: 0.5rem;
-}
-
-/* Seção Interativa */
-.interactive {
-  text-align: center;
-}
-
-.btn-group {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-.btn {
-  background-color: #334155;
-  color: #fff;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.btn.active, .btn:hover {
-  background-color: #38bdf8;
-  color: #0f172a;
-}
-
-.sim-box {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 1rem auto;
-  border: 3px solid #38bdf8;
-  border-radius: 8px;
-  display: flex;
+/* Grade de Teoria */
+.theory-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
   align-items: center;
-  justify-content: center;
-  transition: all 0.5s ease;
 }
 
-.sim-content {
-  font-size: 5rem;
-  font-weight: bold;
-  transform: rotate(180deg) scaleX(-1); /* Inversão vertical e horizontal */
-  transition: all 0.5s ease;
+@media (max-width: 768px) {
+  .theory-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Estilos dinâmicos do JS */
-.mode-pinhole {
+/* Imagens e Diagrama Animado */
+.img-container {
+  text-align: center;
+  position: relative;
+}
+
+.interactive-diagram {
+  width: 100%;
+  height: 200px;
   background-color: #050505;
-  color: rgba(255, 255, 255, 0.4); /* Imagem escura */
+  border-radius: 8px;
+  border: 1px solid var(--text-mute);
+  overflow: hidden;
+  position: relative;
+}
+
+.diagram-box {
+  width: 80px;
+  height: 120px;
+  background-color: #333;
+  border: 2px solid #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pinhole {
+  width: 4px;
+  height: 4px;
+  background-color: transparent;
+  border: 2px solid yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: -3px;
+  transform: translateY(-50%);
+}
+
+.diagram-f-object, .diagram-f-image {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--primary);
+  position: absolute;
+}
+
+.diagram-f-object {
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.diagram-f-image {
+  right: 15%;
+  top: 50%;
+  color: var(--highlight);
+  transform: translateY(-50%) rotate(180deg) scaleX(-1); /* Invertida */
   filter: blur(1px);
 }
 
-.mode-lens {
-  background-color: #0f172a;
-  color: #38bdf8; /* Imagem clara e brilhante */
-  filter: blur(0px);
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+/* Seção Interativa */
+.simulation-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: #000;
+  padding: 1rem;
+  border-radius: 12px;
+  height: 300px;
+  overflow: hidden;
+  border: 2px dashed rgba(255,255,255,0.2);
 }
 
-.sim-desc {
-  font-size: 0.95rem;
-  color: #cbd5e1;
+.sim-content {
+  color: var(--primary);
+  font-size: 10rem;
+  font-weight: bold;
+  transform: rotate(0deg); /* Objeto real */
+}
+
+.projection-wall {
+  text-align: center;
+  width: 150px;
+  height: 250px;
+  border: 3px solid var(--secondary);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255,255,255,0.05);
+  color: var(--highlight);
+  position: relative;
+}
+
+/* Imagem Invertida Animada */
+.pinhole-visualization {
+  font-size: 8rem;
+  font-weight: bold;
+  transform: rotate(180deg) scaleX(-1);
+  transition: all 0.2s ease;
+  filter: blur(1px);
+  color: var(--highlight);
+  opacity: 0.2; /* Inicialmente escura */
+}
+
+.pinhole-visualization::before {
+  content: "H"; /* Mesma letra do objeto */
+}
+
+/* Controles Coloridos */
+.controls-group {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 8px;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+}
+
+.control label {
+  color: var(--text-mute);
+  margin-bottom: 0.5rem;
+}
+
+.control span {
+  color: var(--highlight);
+  font-weight: bold;
+}
+
+/* Estilo do Slider (Input Range) Colorido */
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -6px; /* Ajuste do thumb */
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.8);
+}
+
+/* Efeito Dinâmico de Texto */
+.effect-description {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  border-left: 4px solid var(--primary);
+  color: var(--text-mute);
+}
+
+/* Seção Math e Desafios */
+.challenge-box {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.challenge {
+  flex: 1;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 2px solid;
+}
+
+.shadow {
+  border-color: rgba(255,255,255,0.1);
+  background-color: rgba(0,0,0,0.5);
+  filter: contrast(0.5); /* Imagem escura */
+}
+
+.fuzz {
+  border-color: var(--accent);
+  background-color: rgba(244, 63, 94, 0.1);
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.3);
+  color: var(--text-mute);
+  filter: blur(2px); /* Efeito borrado */
+}
+
+.challenge h3 {
+  color: var(--highlight);
+  margin-bottom: 0.5rem;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 2rem;
-  color: #64748b;
+  color: rgba(255,255,255,0.1);
   font-size: 0.9rem;
 }
