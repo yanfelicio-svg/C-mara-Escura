@@ -3,86 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Física da Câmara Escura</title>
+  <title>A Magia da Câmara Escura de Orifício (Pinhole)</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header class="hero">
-    <h1>Câmara Escura & a Propagação da Luz</h1>
-    <p>Descubra o princípio físico por trás do surgimento da fotografia e dos olhos humanos.</p>
+    <h1>Câmara Escura de Orifício</h1>
+    <p>A física da luz e a imagem invertida em sua forma mais simples.</p>
   </header>
 
   <main class="container">
     
-    <section class="card">
-      <h2>O que é uma Câmara Escura?</h2>
+    <section class="card intro">
+      <h2>O que é e Como Funciona?</h2>
       <p>
-        A <strong>câmara escura</strong> é um dispositivo óptico baseado no princípio da 
-        <em>propagação retilínea da luz</em>. Quando a luz refletida por um objeto passa por um pequeno 
-        orifício e atinge uma superfície oposta (anteparo), uma imagem invertida do objeto é projetada.
+        A **câmara escura de orifício**, também conhecida como <em>câmera pinhole</em>, é o dispositivo óptico mais simples que existe. Ela demonstra a **propagação retilínea da luz**: a luz viaja em linha reta.
       </p>
-      <div class="img-container">
-        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Câmera fotográfica vintage representando a câmara escura">
-        <span class="caption">A câmara escura é a ancestral direta das câmeras fotográficas modernas.</span>
+      <div class="theory-grid">
+        <div class="theory-text">
+          <p>Imagine uma caixa totalmente selada, exceto por um furo minúsculo em uma das faces.</p>
+          <ul>
+            <li>A luz do ambiente externo reflete nos objetos.</li>
+            <li>Apenas uma quantidade muito pequena de luz passa pelo furo.</li>
+            <li>Esses raios de luz atingem a parede oposta (o anteparo), formando uma imagem **invertida** e **menor** do objeto externo.</li>
+          </ul>
+        </div>
+        <div class="img-container">
+          <div id="diagram" class="interactive-diagram">
+            <div class="diagram-light light-top"></div>
+            <div class="diagram-light light-bottom"></div>
+            <div class="diagram-box">
+              <div class="pinhole"></div>
+            </div>
+            <div class="diagram-f-object">F</div>
+            <div class="diagram-f-image">F</div>
+          </div>
+          <span class="caption">A luz viaja em linha reta e cruza no orifício.</span>
+        </div>
       </div>
     </section>
 
-    <section class="card">
-      <h2>1. Câmara Escura sem Lente (Pinhole)</h2>
-      <p>
-        Na versão mais simples (conhecida como câmara de orifício ou <i>pinhole</i>), a luz passa diretamente por um pequeno furo.
+    <section class="card simulation">
+      <h2>Simulador Pinhole Interativo</h2>
+      <p>Ajuste o tamanho do orifício e veja o que acontece com a imagem projetada no anteparo!</p>
+      
+      <div class="simulation-area">
+        <div id="simImage" class="sim-content">
+          <span>H</span> </div>
+        
+        <div class="projection-wall">
+          <div class="pinhole-visualization"></div>
+          <p>Anteparo (Caixa Interna)</p>
+        </div>
+      </div>
+
+      <div class="controls-group">
+        <div class="control">
+          <label for="holeSize">Tamanho do Orifício: <span id="holeSizeVal">Pequeno</span></label>
+          <input type="range" id="holeSize" min="1" max="10" value="1">
+        </div>
+        <div class="control">
+          <label for="distanceVal">Distância do Objeto: <span id="distVal">Longe</span></label>
+          <input type="range" id="distanceVal" min="5" max="25" value="20">
+        </div>
+      </div>
+
+      <p id="simEffectDesc" class="effect-description">
+        Quando o orifício é **pequeno**, a imagem é **nítida**, mas **escura**.
       </p>
-      <ul>
-        <li><strong>Formação da Imagem:</strong> Os raios de luz do topo do objeto cruzam o orifício e atingem a base do anteparo, enquanto os raios da base atingem o topo, criando uma imagem <strong>invertida (de cabeça para baixo e invertida lateralmente)</strong>.</li>
-        <li><strong>Nitidez vs. Brilho:</strong> Um orifício muito pequeno gera uma imagem bastante nítida, porém muito escura (pouca luz entra). Se o orifício for ampliado, entra mais luz, mas a imagem fica borrada.</li>
-      </ul>
-      <div class="equation-box">
-        <p><strong>Fórmula Magnificação:</strong></p>
-        <p><code>i / o = p' / p</code></p>
-        <small>(onde <b>i</b> = tamanho da imagem, <b>o</b> = tamanho do objeto, <b>p'</b> = distância da imagem ao orifício, <b>p</b> = distância do objeto ao orifício)</small>
-      </div>
-      <div class="img-container">
-        <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80" alt="Ilustração do conceito de projeção de luz">
-        <span class="caption">Sem lente: A nitidez depende exclusivamente do diâmetro do orifício.</span>
-      </div>
     </section>
 
-    <section class="card">
-      <h2>2. Câmara Escura com Lente</h2>
-      <p>
-        Para resolver o dilema entre brilho e nitidez, substitui-se o pequeno furo por uma <strong>lente convergente</strong>.
-      </p>
-      <ul>
-        <li><strong>Foco e Concentração:</strong> A lente refrata (desvia) os raios de luz convergindo-os em um ponto focal específico no anteparo.</li>
-        <li><strong>Vantagem:</strong> Permite utilizar uma abertura muito maior, capturando mais luz (imagem mais brilhante) sem perder a nitidez.</li>
-        <li><strong>Aplicações:</strong> Câmeras fotográficas digitais, projetores e o próprio olho humano (onde o cristalino atua como a lente e a retina como o anteparo).</li>
-      </ul>
-      <div class="img-container">
-        <img src="https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?auto=format&fit=crop&w=800&q=80" alt="Lente fotográfica focando a luz">
-        <span class="caption">Com lente: Foco preciso e maior captação de luz.</span>
+    <section class="card math">
+      <h2>O Dilema do Pinhole</h2>
+      <p>Embora simples, a câmara de orifício exige um equilíbrio.</p>
+      <div class="challenge-box">
+        <div class="challenge shadow">
+          <h3>Furo Muito Pequeno</h3>
+          <p>Alta nitidez (foco), mas a imagem é extremamente **escura**. A luz é muito fraca.</p>
+        </div>
+        <div class="challenge fuzz">
+          <h3>Furo Muito Grande</h3>
+          <p>A imagem fica mais brilhante, mas muito **borrada** (fora de foco), pois muitos raios de luz de diferentes pontos atingem o mesmo ponto no anteparo.</p>
+        </div>
       </div>
-    </section>
-
-    <section class="card interactive">
-      <h2>Comparativo Interativo</h2>
-      <p>Alterne entre os modos para entender o efeito visual no anteparo:</p>
-      <div class="btn-group">
-        <button id="btnNoLens" class="btn active">Sem Lente (Pinhole)</button>
-        <button id="btnWithLens" class="btn">Com Lente Convergente</button>
-      </div>
-      <div id="simulationBox" class="sim-box mode-pinhole">
-        <div id="simImage" class="sim-content">F</div>
-      </div>
-      <p id="simDescription" class="sim-desc">
-        <strong>Modo Pinhole:</strong> Imagem invertida e com brilho reduzido.
-      </p>
     </section>
 
   </main>
 
   <footer>
-    <p>Projeto Educativo sobre Física Óptica &copy; 2026</p>
+    <p>Explorando a Óptica Geométrica &copy; 2026 - Projeto Educativo</p>
   </footer>
 
   <script src="script.js"></script>
